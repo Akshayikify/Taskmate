@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% block title%}
+    <title>About Us-Takmate</title>
+{% endblock %}
+
+{% block content%}
+    <h1 class="m-5">{{Heading}} {{App_name}}</h1>
+    <p class="m-5">{{Content}}</p>
+    <div class="content m-5 shadow p-3 mb-5 bg-body-tertiary rounded">
+        <p>
+            TaskMate is a modern, full-stack task management web application designed to help users organize their daily activities, track progress, and improve productivity with ease. The platform provides a simple yet powerful interface for creating, managing, and completing tasks in real time.
+
+            Built with a focus on usability, performance, and security, TaskMate allows users to maintain personalized to-do lists while ensuring their data is safely stored and accessible anytime, anywhere.
+        </p>
+        <h3>Our Mission</h3>
+        <p>The mission of TaskMate is to simplify task management by providing a reliable and intuitive digital workspace that helps users stay focused, organized, and productive in their everyday lives.</p>
+        <ul>
+            <li>User Authentication -Secure login and registration system for personalized access</li>
+            <li>Task Management - Create, update, delete, and track tasks efficiently</li>
+            <li>Real-Time Updates - Dynamic interaction between frontend and backend</li>
+            <li>Clean UI/UX - Minimal, responsive, and user-friendly interface</li>
+            <li>Data Security - Safe handling of user information and tasks</li>
+        </ul>
+    </div>
+{% endblock %}

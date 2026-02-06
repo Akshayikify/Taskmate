@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+{% block title%}
+    <title>Login-Takmate</title>
+{% endblock %}
+
+{% block content%}
+ <br>
+    {% for message in messages%}
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+          {% endfor %}
+    <div class="d-flex justify-content-center">
+       <form method="POST" class="shadow p-3 mb-5 bg-body-tertiary rounded">
+        {% csrf_token %}
+        {{ form |crispy }}
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+    </div>
+{% endblock %}

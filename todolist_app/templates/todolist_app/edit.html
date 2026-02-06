@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title%}
+    <title>Edit Task</title>
+{% endblock %}
+
+{% block content %}
+    {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor%}
+    <form method="POST">
+        {% csrf_token %}
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"></label>
+                  <input type="hidden" name="_method" value="PUT" class="form-control" id="exampleInputEmail1" placeholder="Enter the tasks here" name="task">
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="hidden" name="_method" value="PUT" class="form-check-input" id="exampleCheck1" name="done">
+                  <label class="form-check-label" for="exampleCheck1"></label>
+                </div>
+                {{form.as_p}}
+                <button type="submit" class="btn btn-primary">Update Task</button>
+    </form>
+{% endblock %}

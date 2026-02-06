@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title%}
+    <title>Home</title>
+{% endblock %}
+{% block content%}
+
+<div class="row mx-4 d-flex justify-content-center">
+    <div class="col-lg-4">
+        <img src="{% static 'images/Todolist-1.jpg' %}" 
+             alt="Todolist" 
+             class="img-fluid rounded-1 shadow-sm p-3 mb-5 bg-body-tertiary rounded" width="300" height="200">
+    </div>
+    <div class="col-lg-4">
+        <img src="{% static 'images/Todolist-2.jpg' %}" 
+             alt="Todolist" 
+             class="img-fluid rounded-1 shadow-sm p-3 mb-5 bg-body-tertiary rounded" width="300" height="200">
+    </div>
+    <div class="col-lg-4">
+        <img src="{% static 'images/Todolist-3.jpg' %}" 
+             alt="Todolist" 
+             class="img-fluid rounded-1 shadow-sm p-3 mb-5 bg-body-tertiary rounded" width="300" height="200">
+    </div>
+    <div class="row">
+        <h1 class="d-flex justify-content-center mt-3 $indigo-400" style="color: #6E1DBF;">Make your own TodoList and enjoy the productivity everyday.</h1>
+        <small class="d-flex justify-content-center">Where the productivity is mined with your own pace.</small>
+        <div class="d-inline-flex p-2 justify-content-center mt-3">
+            <a href="{% url 'task' %}"><button type="button" class="btn btn-primary btn-lg mx-2 ">Let's Get Started</button></a>
+        </div>
+    </div>
+</div>
+
+{% endblock%}
