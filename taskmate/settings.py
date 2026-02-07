@@ -10,10 +10,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DJANGO_DEBUG")
+DEBUG = os.environ.get("DJANGO_DEBUG")
 
 ALLOWED_HOSTS = ["*"]
 
@@ -75,11 +75,11 @@ WSGI_APPLICATION = 'taskmate.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv("DJANGO_DB_NAME"),
-        'USER': os.getenv("DJANGO_DB_USER"),
-        'PASSWORD': os.getenv("DJANGO_DB_PASSWORD"),
-        'HOST': os.getenv("DJANGO_DB_HOST"),
-        'PORT': os.getenv("DJANGO_DB_PORT"),
+        'NAME': os.environ.get("DJANGO_DB_NAME"),
+        'USER': os.environ.get("DJANGO_DB_USER"),
+        'PASSWORD': os.environ.get("DJANGO_DB_PASSWORD"),
+        'HOST': os.environ.get("DJANGO_DB_HOST"),
+        'PORT': os.environ.get("DJANGO_DB_PORT"),
     }
 }
 
@@ -134,6 +134,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 LOGIN_REDIRECT_URL = "task"
 LOGIN_URL = "login"
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
