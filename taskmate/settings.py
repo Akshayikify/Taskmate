@@ -1,7 +1,6 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-import dj_database_url
 
 load_dotenv()
 
@@ -14,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DJANGO_DEBUG", "False").lower() == "true"
+
 
 ALLOWED_HOSTS = ["*"]
 
@@ -74,12 +73,16 @@ WSGI_APPLICATION = 'taskmate.wsgi.application'
 
 # Database
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get("DJANGO_DB_NAME"),
+        'USER': os.environ.get("DJANGO_DB_USER"),
+        'PASSWORD': os.environ.get("DJANGO_DB_PASSWORD"),
+        'HOST': os.environ.get("DJANGO_DB_HOST"),
+        'PORT': os.environ.get("DJANGO_DB_PORT"),
+    }
 }
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
