@@ -1,2 +1,3 @@
-web: gunicorn projectname.wsgi:application
+web: gunicorn taskmate.wsgi:application --bind 0.0.0.0:$PORT
+
 
