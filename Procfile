@@ -1,1 +1,2 @@
-web: gunicorn taskmate.wsgi --log-file -
+web: gunicorn projectname.wsgi:application
+
