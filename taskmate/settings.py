@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import dj_database_url
 
 load_dotenv()
 
@@ -73,16 +74,11 @@ WSGI_APPLICATION = 'taskmate.wsgi.application'
 
 # Database
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get("DJANGO_DB_NAME"),
-        'USER': os.environ.get("DJANGO_DB_USER"),
-        'PASSWORD': os.environ.get("DJANGO_DB_PASSWORD"),
-        'HOST': os.environ.get("DJANGO_DB_HOST"),
-        'PORT': os.environ.get("DJANGO_DB_PORT"),
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600
+    )
 }
-
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
