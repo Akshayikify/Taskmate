@@ -48,7 +48,7 @@ def about(request):
         "App_name": App_name,
         "Content":f"Established:{year} with ambition of providing the dynamic Todolist place for the user to create their own TodoList to make thier own better today.",
     }
-    return render(request,'todolist_app/about.html',context)
+    return render(request,'todolist_app/About.html',context)
 @login_required
 def delete_task(request,task_id):
     task=TodoList.objects.get(pk=task_id, owner=request.user)
