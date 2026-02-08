@@ -11,7 +11,10 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["localhost","127.0.0.1","newertaskmate.up.railway.app"]
+
+# List of trusted origins for CSRF protection
+CSRF_TRUSTED_ORIGINS = ['newertaskmate.up.railway.app']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
