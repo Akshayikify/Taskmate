@@ -17,6 +17,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 ALLOWED_HOSTS = ["*"]
 
+DEBUG = os.environ.get("DJANGO_DEBUG", "False") == "True"
 
 # Application definition
 INSTALLED_APPS = [
@@ -123,6 +124,8 @@ STATICFILES_DIRS = [
 
 # Production static files (collectstatic)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # Crispy Forms

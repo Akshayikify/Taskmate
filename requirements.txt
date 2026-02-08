@@ -1,7 +1,7 @@
 asgiref==3.11.0
 crispy-bootstrap5==2025.6
 dj-database-url==3.1.0
-Django==6.0.1
+Django==4.2.11
 django-crispy-forms==2.5
 django-environ==0.12.0
 gunicorn==25.0.2
