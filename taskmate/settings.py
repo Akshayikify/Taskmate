@@ -14,7 +14,8 @@ DEBUG = os.environ.get("DJANGO_DEBUG", "False") == "True"
 ALLOWED_HOSTS = ["localhost","127.0.0.1","newertaskmate.up.railway.app"]
 
 # List of trusted origins for CSRF protection
-CSRF_TRUSTED_ORIGINS = ['newertaskmate.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://newertaskmate.up.railway.app']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
